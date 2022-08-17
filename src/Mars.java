@@ -1,5 +1,5 @@
 public class Mars {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
         String colonyName = "wildfire";
         int shipPopulation = 300;
         double shipFood = 4000.00;
@@ -20,10 +20,12 @@ public class Mars {
             System.out.println("ERROR!! Flight plan already set. Landing on the plain");
         }
 
-        landing = landing(100);
+        landing = landingCheck(100);
+
+        new GuessingGame();
     }
 
-    public static void LandingCheck(int Loops) throws InterruptedException {
+    public static boolean landingCheck(int Loops) throws InterruptedException {
         for (int i = 0; i <= Loops; i++) {
             if (((i / 3) == 0) && (i / 5 == 0)) {
                 System.out.println("Keep Center");
@@ -36,7 +38,6 @@ public class Mars {
             }
             Thread.sleep(250);
         }
-
         System.out.println("Landed");
         return false;
     }
