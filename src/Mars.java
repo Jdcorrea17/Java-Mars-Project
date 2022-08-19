@@ -24,6 +24,7 @@ public class Mars {
 
         new GuessingGame();
         new MarsExpedition();
+        new FindingLists();
     }
 
     public static boolean landingCheck(int Loops) throws InterruptedException {
